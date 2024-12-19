@@ -569,11 +569,32 @@
   
   
     <li class="md-nav__item">
+      <a href="haldanethesis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    【文献阅读】Haldane
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="kane-mele.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Kane-mele
+    【文献阅读】Kane-mele
   </span>
   
 
@@ -1171,7 +1192,7 @@ Haldane模型和Kane-mele模型都是基于单层石墨烯晶格的物理模型�
 <h3 id="41-haldane">4.1 Haldane 模型</h3>
 <h4 id="411-haldane">4.1.1 Haldane 模型基础</h4>
 <p>Haldane模型的晶格是石墨烯晶格。石墨烯晶格是元胞中有两个原子的六角晶格。
-<img alt="" src="/assets/graphne-fig.png" /><br />
+<img alt="" src="assets/graphne-fig.png" /><br />
 上图中的a，b区域表示Haldane模型对石墨烯晶格的不同区域所加的不同磁场。整个正六边形内部的净磁通量为0，但是a,b区域磁通量不为0.这种交错添加的磁通量导致了电子在不同原子之间跃迁时所会带上不同的相位。如图所示，最近邻跃迁的闭合路径包围了整个晶胞，因此净通量为0。因此所加的磁场对最近邻跃迁矩阵不产生影响。对于次近邻跃迁，其包含了两个a区域和一个b区域，因此t2的矩阵带上了
 <span class="arithmatex"><span class="MathJax_Preview">\phi=2\pi(2\Phi_a+\Phi_b)\Phi_0</span><script type="math/tex">\phi=2\pi(2\Phi_a+\Phi_b)\Phi_0</script></span>
 的相位。这就意味着【？】</p>
@@ -1249,11 +1270,13 @@ t2(e^{-i\{kx,ky\}.b_1-i\phi}+e^{i\{kx,ky\}.b_1+i\phi}+e^{-i\{kx,ky\}.b_2-i\phi}+
 \end{eqnarray}</script>
 </div>
 <h4 id="415-haldane">4.1.5 Haldane模型求解</h4>
-<p>在写出动量空间的矩阵形式哈密顿量之后，我们可以通过求解矩阵的本征值和本征向量，就可以得到Haldane模型的能带。
-<img alt="" src="/assets/haldane3d.jpg" /></p>
+<p>在写出动量空间的矩阵形式哈密顿量之后，我们可以通过求解矩阵的本征值和本征向量，就可以得到Haldane模型的能带。</p>
+<p>在mathematica中使用本征值求解函数，
+<img alt="" src="assets/haldane3d.jpg" /></p>
 <p>我们也可以得到在不同位置的二维能带图</p>
 <p><img alt="" src="assets/haldane2d.jpg" /></p>
 <h3 id="42-kane-mele">4.2 Kane-mele 模型</h3>
+<p>Kane-mele模型是在紧束缚模型基础上考虑自旋轨道耦合效应得到的模型。同样是基于石墨烯晶格，kane-mele模型不要求晶格内交错磁场。由于单层石墨烯没有了层间耦合，因此相对于层间耦合很弱的自旋轨道耦合就会表现出来，从而在石墨烯晶格中表现出拓扑特征。</p>
 <h4 id="421-kane-mele">4.2.1 Kane-mele 模型基础</h4>
 <h4 id="422">4.2.2 实空间哈密顿量</h4>
 <h4 id="423">4.2.3 傅里叶变换</h4>

@@ -16,7 +16,7 @@
         <link rel="prev" href="changelog.html">
       
       
-        <link rel="next" href="Haldane.html">
+        <link rel="next" href="mmapractice2.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -46,6 +46,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -683,6 +685,27 @@
   
   
     <li class="md-nav__item">
+      <a href="mmapractice2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    【练习】ssh模型与tfunc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Haldane.html" class="md-nav__link">
         
   
@@ -796,6 +819,27 @@
   
   <span class="md-ellipsis">
     CMP Thesis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mathphysics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数理方法补课
   </span>
   
 
@@ -998,56 +1042,56 @@
 <h3 id="_2">石墨烯晶格：</h3>
 <p><img src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/new_dyn/b27714a5d2b02ffae1b8985c5644b2d425463303.png" height=300 width=300 align=center /></p>
 <h3 id="1">1.构建元胞</h3>
-<p>假设晶格常数<span class="arithmatex"><span class="MathJax_Preview">a=1</span><script type="math/tex">a=1</script></span>，以元胞中心为原点。
-<div class="highlight"><pre><span></span><code><span class="n">ClearAll</span><span class="p">[</span><span class="n">ucellgra</span><span class="p">]</span>
-<span class="n">ucellgra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">-1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">}};</span>
-<span class="n">ListPlot</span><span class="p">[</span><span class="n">ucellgra</span><span class="p">]</span>
-</code></pre></div>
-<a href="https://imgse.com/i/pALsZlV"><img src="https://s21.ax1x.com/2024/12/18/pALsZlV.jpg" alt="pALsZlV.jpg" border="0" /></a>
+<p>假设晶格常数<span class="arithmatex">\(a=1\)</span>，以元胞中心为原点。</p>
+<pre><code class="language-mathematica">ClearAll[ucellgra]
+ucellgra = {{-1/2, 0}, {1/2, 0}};
+ListPlot[ucellgra]
+</code></pre>
+<p><a href="https://imgse.com/i/pALsZlV"><img src="https://s21.ax1x.com/2024/12/18/pALsZlV.jpg" alt="pALsZlV.jpg" border="0" /></a>
 可以看到代码在<code>[-1/2,1/2]</code>处画出了两个点，作为一个元胞。</p>
 <h3 id="2">2.构建基矢</h3>
-<p><div class="highlight"><pre><span></span><code><span class="n">ClearAll</span><span class="p">[</span><span class="n">vas</span><span class="p">,</span><span class="w"> </span><span class="n">vascoeef</span><span class="p">]</span>
-<span class="n">vas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">}};</span>
-</code></pre></div>
-<a href="https://imgse.com/i/pALy1Hg"><img src="https://s21.ax1x.com/2024/12/18/pALy1Hg.png" alt="pALy1Hg.png" border="0" /></a>
+<pre><code class="language-mathematica">ClearAll[vas, vascoeef]
+vas = {{3/2, Sqrt[3]/2}, {3/2, -Sqrt[3]/2}};
+</code></pre>
+<p><a href="https://imgse.com/i/pALy1Hg"><img src="https://s21.ax1x.com/2024/12/18/pALy1Hg.png" alt="pALy1Hg.png" border="0" /></a>
 按照晶格结构，构建了两个基矢。</p>
 <h3 id="3">3.平移得到晶格</h3>
-<p><div class="highlight"><pre><span></span><code><span class="n">vascoeef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}};</span>
-<span class="n">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Table</span><span class="p">[</span>
-<span class="w">   </span><span class="n">TranslationTransform</span><span class="p">[</span><span class="n">vascoeef</span><span class="p">[[</span><span class="n">i</span><span class="p">]]</span><span class="w"> </span><span class="err">.</span><span class="w"> </span><span class="n">vas</span><span class="p">][</span><span class="n">ucellgra</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">}];</span>
-<span class="n">ListPlot</span><span class="p">[</span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">AspectRatio</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}]</span>
-</code></pre></div>
-<a href="https://imgse.com/i/pALyq2t"><img src="https://s21.ax1x.com/2024/12/18/pALyq2t.jpg" alt="pALyq2t.jpg" border="0" /></a>
+<pre><code class="language-mathematica">vascoeef = {{0, 0}, {0, 1}, {1, 0}, {1, 1}};
+lat = Table[
+   TranslationTransform[vascoeef[[i]] . vas][ucellgra], {i, 4}];
+ListPlot[lat, AspectRatio -&gt; {1, 1, 1}]
+</code></pre>
+<p><a href="https://imgse.com/i/pALyq2t"><img src="https://s21.ax1x.com/2024/12/18/pALyq2t.jpg" alt="pALyq2t.jpg" border="0" /></a>
 可以看到在各基矢的方向平移得到一部分晶格。</p>
 <h3 id="4">4.双层晶格</h3>
 <p>单层晶格到双层晶格的关键在于添加维度，给元胞添加维度，添加基矢和基矢维度。</p>
-<p><div class="highlight"><pre><span></span><code><span class="n">ucellgra3d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">-1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">}};</span>
-<span class="n">vasgra3d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}};</span>
-<span class="n">vascoeefgra3d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}};</span>
-<span class="n">latgra3d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
-<span class="w">  </span><span class="n">Table</span><span class="p">[</span><span class="n">TranslationTransform</span><span class="p">[</span><span class="n">vascoeefgra3d</span><span class="p">[[</span><span class="n">i</span><span class="p">]]</span><span class="w"> </span><span class="err">.</span><span class="w"> </span><span class="n">vasgra3d</span><span class="p">][</span>
-<span class="w">    </span><span class="n">ucellgra3d</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">}];</span>
-<span class="n">ListPointPlot3D</span><span class="p">[</span><span class="n">latgra3d</span><span class="p">,</span><span class="w"> </span><span class="n">BoxRatios</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Automatic</span><span class="p">]</span>
-</code></pre></div>
-<a href="https://imgse.com/i/pAL6HwF"><img src="https://s21.ax1x.com/2024/12/18/pAL6HwF.jpg" alt="pAL6HwF.jpg" border="0" /></a></p>
+<pre><code class="language-mathematica">ucellgra3d = {{-1/2, 0, 0}, {1/2, 0, 0}};
+vasgra3d = {{3/2, Sqrt[3]/2, 0}, {3/2, -Sqrt[3]/2, 0}, {0, 0, 1}};
+vascoeefgra3d = {{0, 0, 0}, {0, 1, 0}, {1, 0, 0}, {1, 1, 0}, {0, -1, 
+    0}, {-1, 0, 0}, {-1, -1, 0}, {1, -1, 0}, {-1, 1, 0}, {0, 0, 
+    1}, {0, 1, 1}, {1, 0, 1}, {1, 1, 1}, {0, -1, 1}, {-1, 0, 
+    1}, {-1, -1, 1}, {1, -1, 1}, {-1, 1, 1}};
+latgra3d = 
+  Table[TranslationTransform[vascoeefgra3d[[i]] . vasgra3d][
+    ucellgra3d], {i, 18}];
+ListPointPlot3D[latgra3d, BoxRatios -&gt; Automatic]
+</code></pre>
+<p><a href="https://imgse.com/i/pAL6HwF"><img src="https://s21.ax1x.com/2024/12/18/pAL6HwF.jpg" alt="pAL6HwF.jpg" border="0" /></a></p>
 <h2 id="kagome">双层Kagome晶格</h2>
 <p>Kagome晶格是一个元胞中包含<strong>三</strong>个原子的晶格，整个晶格可以由一个元胞在基矢方向上的平移得到。因此在mathematica中也可以从<strong>构建元胞，构建基矢，平移元胞</strong>这个三步实现整个晶格的构建。</p>
 <p>双层kagome晶格和双层石墨烯晶格类似，只是将元胞换为三个原子，同时也更换基矢。</p>
-<p><div class="highlight"><pre><span></span><code><span class="n">ucellkagome3d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">-1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">}};</span>
-<span class="n">vaskagome3d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}};</span>
-<span class="n">vascoeefkagome3d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">}};</span>
-<span class="n">latkagome3d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
-<span class="w">  </span><span class="n">Table</span><span class="p">[</span><span class="n">TranslationTransform</span><span class="p">[</span><span class="n">vascoeefkagome3d</span><span class="p">[[</span><span class="n">i</span><span class="p">]]</span><span class="w"> </span><span class="err">.</span><span class="w"> </span><span class="n">vaskagome3d</span><span class="p">][</span>
-<span class="w">    </span><span class="n">ucellkagome3d</span><span class="p">],</span><span class="w"> </span><span class="p">{</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">18</span><span class="p">}];</span>
-<span class="n">ListPointPlot3D</span><span class="p">[</span><span class="n">latkagome3d</span><span class="p">,</span><span class="w"> </span><span class="n">BoxRatios</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Automatic</span><span class="p">]</span>
-</code></pre></div>
-<a href="https://imgse.com/i/pAL6xQx"><img src="https://s21.ax1x.com/2024/12/18/pAL6xQx.jpg" alt="pAL6xQx.jpg" border="0" /></a></p>
+<pre><code class="language-mathematica">ucellkagome3d = {{-1/2, 0, 0}, {1/2, 0, 0}, {0, -1, 0}};
+vaskagome3d = {{1, Sqrt[3], 0}, {1, -Sqrt[3], 0}, {0, 0, 1}};
+vascoeefkagome3d = {{0, 0, 0}, {0, 1, 0}, {1, 0, 0}, {1, 1, 
+    0}, {0, -1, 0}, {-1, 0, 0}, {-1, -1, 0}, {1, -1, 0}, {-1, 1, 
+    0}, {0, 0, 1}, {0, 1, 1}, {1, 0, 1}, {1, 1, 1}, {0, -1, 1}, {-1, 
+    0, 1}, {-1, -1, 1}, {1, -1, 1}, {-1, 1, 1}};
+latkagome3d = 
+  Table[TranslationTransform[vascoeefkagome3d[[i]] . vaskagome3d][
+    ucellkagome3d], {i, 18}];
+ListPointPlot3D[latkagome3d, BoxRatios -&gt; Automatic]
+</code></pre>
+<p><a href="https://imgse.com/i/pAL6xQx"><img src="https://s21.ax1x.com/2024/12/18/pAL6xQx.jpg" alt="pAL6xQx.jpg" border="0" /></a></p>
 <p>此处省略详细步骤，具体步骤和石墨烯晶格类似。</p>
 
 

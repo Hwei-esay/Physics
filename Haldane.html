@@ -13,7 +13,7 @@
       
       
       
-        <link rel="prev" href="mmapractice1.html">
+        <link rel="prev" href="mmapractice2.html">
       
       
         <link rel="next" href="haldanethesis.html">
@@ -46,6 +46,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -571,6 +573,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="mmapractice2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    【练习】ssh模型与tfunc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -663,9 +686,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#141-c_i-rightarrow-a_kc_i-rightarrow-a_k" class="md-nav__link">
+  <a href="#141-c_i-rightarrow-a_k" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.1 傅里叶变换——(c_i \rightarrow a_kc_i \rightarrow a_k)
+      1.4.1 傅里叶变换——(\(c_i \rightarrow a_k\))
     </span>
   </a>
   
@@ -807,6 +830,27 @@
   
   <span class="md-ellipsis">
     CMP Thesis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mathphysics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数理方法补课
   </span>
   
 
@@ -961,9 +1005,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#141-c_i-rightarrow-a_kc_i-rightarrow-a_k" class="md-nav__link">
+  <a href="#141-c_i-rightarrow-a_k" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4.1 傅里叶变换——(c_i \rightarrow a_kc_i \rightarrow a_k)
+      1.4.1 傅里叶变换——(\(c_i \rightarrow a_k\))
     </span>
   </a>
   
@@ -1019,112 +1063,58 @@
 
 <p><img alt="" src="https://images.unsplash.com/photo-1571757767119-68b8dbed8c97?q=80&amp;w=2670&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" /></p>
 <h2 id="1-hamiltonian">1. Hamiltonian</h2>
-<div class="arithmatex">
-<div class="MathJax_Preview">H=M\sum_i\xi_ic_i^{\dagger}c_i+t_1\sum_{&lt;i,j\&gt;}c_i^\dagger c_j+t_2\sum_{&lt;&lt;i,j\&gt;\&gt;}e^{iv_{ij}\phi}c_i^\dagger c_j+h.c.</div>
-<script type="math/tex; mode=display">H=M\sum_i\xi_ic_i^{\dagger}c_i+t_1\sum_{<i,j\>}c_i^\dagger c_j+t_2\sum_{<<i,j\>\>}e^{iv_{ij}\phi}c_i^\dagger c_j+h.c.</script>
-</div>
+<div class="arithmatex">\[H=M\sum_i\xi_ic_i^{\dagger}c_i+t_1\sum_{&lt;i,j\&gt;}c_i^\dagger c_j+t_2\sum_{&lt;&lt;i,j\&gt;\&gt;}e^{iv_{ij}\phi}c_i^\dagger c_j+h.c.\]</div>
 <!--在mkdocs中，<>中的反括号前需要加\，且每一个都要加-->
 
 <h3 id="11">1.1 质量项</h3>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 H_1=M\sum_i\xi_i c_i^\dagger c_i
-</div>
-<script type="math/tex; mode=display">
-H_1=M\sum_i\xi_i c_i^\dagger c_i
-</script>
-</div>
+\]</div>
 <p>代表在本来的位置上产生和湮灭</p>
 <h3 id="12-nn">1.2 最近邻跃迁（NN）</h3>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 H_2=t_1\sum_{&lt;i,j\&gt;}c_i^\dagger c_j
-</div>
-<script type="math/tex; mode=display">
-H_2=t_1\sum_{<i,j\>}c_i^\dagger c_j
-</script>
-</div>
+\]</div>
 <p>代表在本来位置上湮灭并在最邻近位置上产生</p>
 <h3 id="13-nnn">1.3 次近邻跃迁（NNN）</h3>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 H_3=t_2\sum_{&lt;&lt;i,j\&gt;\&gt;}e^{iv_{ij}\phi}c_i^\dagger c_j
-</div>
-<script type="math/tex; mode=display">
-H_3=t_2\sum_{<<i,j\>\>}e^{iv_{ij}\phi}c_i^\dagger c_j
-</script>
-</div>
+\]</div>
 <p>代表在本来位置上湮灭并在次近邻位置上产生</p>
 <h3 id="14">1.4 哈密顿量转换为矩阵形式</h3>
-<p>即：写成用<span class="arithmatex"><span class="MathJax_Preview">a_k,b_k</span><script type="math/tex">a_k,b_k</script></span>来表达的形式</p>
-<h4 id="141-c_i-rightarrow-a_kc_i-rightarrow-a_k">1.4.1 傅里叶变换——(<span class="arithmatex"><span class="MathJax_Preview">c_i \rightarrow a_k</span><script type="math/tex">c_i \rightarrow a_k</script></span>)</h4>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<p>即：写成用<span class="arithmatex">\(a_k,b_k\)</span>来表达的形式</p>
+<h4 id="141-c_i-rightarrow-a_k">1.4.1 傅里叶变换——(<span class="arithmatex">\(c_i \rightarrow a_k\)</span>)</h4>
+<div class="arithmatex">\[
 H_{NN}=t1\sum_k(a_k^\dagger b_k e^{-ike_1}+a_k^\dagger b_k e^{-ike_2})+a_k^\dagger b_k e^{-ike_3}+t1\sum_{k}(b_k^\dagger a_k e^{ike_1}+b_k^\dagger a_k e^{ike_2}+b_k^\dagger a_k e^{ike_3})
-</div>
-<script type="math/tex; mode=display">
-H_{NN}=t1\sum_k(a_k^\dagger b_k e^{-ike_1}+a_k^\dagger b_k e^{-ike_2})+a_k^\dagger b_k e^{-ike_3}+t1\sum_{k}(b_k^\dagger a_k e^{ike_1}+b_k^\dagger a_k e^{ike_2}+b_k^\dagger a_k e^{ike_3})
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 H_{NNN}=t_2e^{i\phi}\sum_k a_k^\dagger a_k(e^{-ikv_1}+e^{-ikv_2}+e^{-ikv_3})+t_2e^{i-\phi}\sum_k b_k^\dagger b_k(e^{-ikv_1}+e^{-ikv_2}+e^{-ikv_3})
-</div>
-<script type="math/tex; mode=display">
-H_{NNN}=t_2e^{i\phi}\sum_k a_k^\dagger a_k(e^{-ikv_1}+e^{-ikv_2}+e^{-ikv_3})+t_2e^{i-\phi}\sum_k b_k^\dagger b_k(e^{-ikv_1}+e^{-ikv_2}+e^{-ikv_3})
-</script>
-</div>
+\]</div>
 <ul>
 <li>具体怎么计算的？</li>
 </ul>
 <h4 id="142">1.4.2 使用旋量——(写成矩阵形式)</h4>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 H_{NN}=\begin{pmatrix}
 0 &amp; t1(e^{i\{kx,ky\}.a_1}+e^{i\{kx,ky\}.a_2}+e^{i\{kx,ky\}.a_3}) \\
 t1(e^{-i\{kx,ky\}.a_1}+e^{-i\{kx,ky\}.a_2}+e^{-i\{kx,ky\}.a_3}) &amp; 0
 \end{pmatrix}
-</div>
-<script type="math/tex; mode=display">
-H_{NN}=\begin{pmatrix}
-0 & t1(e^{i\{kx,ky\}.a_1}+e^{i\{kx,ky\}.a_2}+e^{i\{kx,ky\}.a_3}) \\
-t1(e^{-i\{kx,ky\}.a_1}+e^{-i\{kx,ky\}.a_2}+e^{-i\{kx,ky\}.a_3}) & 0
-\end{pmatrix}
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 H_{NNN}=\begin{pmatrix}
 t2(e^{-i\{kx,ky\}.b_1-i\phi}+e^{i\{kx,ky\}.b_1+i\phi}+e^{-i\{kx,ky\}.b_2-i\phi}+e^{i\{kx,ky\}.b_2+i\phi}+e^{-i\{kx,ky\}.b_3-i\phi}+e^{i\{kx,ky\}.b_3+i\phi}) &amp; 0\\
 0 &amp; t2(e^{i\phi-i\{kx,ky\}.b_1}+e^{i\{kx,ky\}.b_1-i\phi}+e^{i\phi-i\{kx,ky\}.b_2}+e^{i\{kx,ky\}.b_2-i\phi}+e^{i\phi-i\{kx,ky\}.b_3}+e^{i\{kx,ky\}.b_3-i\phi})
 \end{pmatrix}
-</div>
-<script type="math/tex; mode=display">
-H_{NNN}=\begin{pmatrix}
-t2(e^{-i\{kx,ky\}.b_1-i\phi}+e^{i\{kx,ky\}.b_1+i\phi}+e^{-i\{kx,ky\}.b_2-i\phi}+e^{i\{kx,ky\}.b_2+i\phi}+e^{-i\{kx,ky\}.b_3-i\phi}+e^{i\{kx,ky\}.b_3+i\phi}) & 0\\
-0 & t2(e^{i\phi-i\{kx,ky\}.b_1}+e^{i\{kx,ky\}.b_1-i\phi}+e^{i\phi-i\{kx,ky\}.b_2}+e^{i\{kx,ky\}.b_2-i\phi}+e^{i\phi-i\{kx,ky\}.b_3}+e^{i\{kx,ky\}.b_3-i\phi})
-\end{pmatrix}
-</script>
-</div>
+\]</div>
 <h3 id="15-mathematica">1.5 Mathematica中写出哈密顿量</h3>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 \left(
 \begin{array}{cc}
  2 \text{t2} \cos (\phi -k.\text{b1})+2 \text{t2} \cos (\phi -k.\text{b2})+2 \text{t2} \cos (\phi -k.\text{b3})+M &amp; -i \text{t1} \sin (k.\text{a1})+\text{t1} \cos (k.\text{a1})-i \text{t1} \sin (k.\text{a2})+\text{t1} \cos (k.\text{a2})-i \text{t1} \sin (k.\text{a3})+\text{t1} \cos (k.\text{a3}) \\
  i \text{t1} \sin (k.\text{a1})+\text{t1} \cos (k.\text{a1})+i \text{t1} \sin (k.\text{a2})+\text{t1} \cos (k.\text{a2})+i \text{t1} \sin (k.\text{a3})+\text{t1} \cos (k.\text{a3}) &amp; 2 \text{t2} \cos (k.\text{b1}+\phi )+2 \text{t2} \cos (k.\text{b2}+\phi )+2 \text{t2} \cos (k.\text{b3}+\phi )-M \\
 \end{array}
 \right)
-</div>
-<script type="math/tex; mode=display">
-\left(
-\begin{array}{cc}
- 2 \text{t2} \cos (\phi -k.\text{b1})+2 \text{t2} \cos (\phi -k.\text{b2})+2 \text{t2} \cos (\phi -k.\text{b3})+M & -i \text{t1} \sin (k.\text{a1})+\text{t1} \cos (k.\text{a1})-i \text{t1} \sin (k.\text{a2})+\text{t1} \cos (k.\text{a2})-i \text{t1} \sin (k.\text{a3})+\text{t1} \cos (k.\text{a3}) \\
- i \text{t1} \sin (k.\text{a1})+\text{t1} \cos (k.\text{a1})+i \text{t1} \sin (k.\text{a2})+\text{t1} \cos (k.\text{a2})+i \text{t1} \sin (k.\text{a3})+\text{t1} \cos (k.\text{a3}) & 2 \text{t2} \cos (k.\text{b1}+\phi )+2 \text{t2} \cos (k.\text{b2}+\phi )+2 \text{t2} \cos (k.\text{b3}+\phi )-M \\
-\end{array}
-\right)
-</script>
-</div>
+\]</div>
 
 
 

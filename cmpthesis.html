@@ -16,7 +16,7 @@
         <link rel="prev" href="kane-mele.html">
       
       
-        <link rel="next" href="dairy/snbf.html">
+        <link rel="next" href="mathphysics.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -46,6 +46,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -569,6 +571,27 @@
   
   
     <li class="md-nav__item">
+      <a href="mmapractice2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    【练习】ssh模型与tfunc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Haldane.html" class="md-nav__link">
         
   
@@ -907,6 +930,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mathphysics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数理方法补课
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1231,72 +1275,36 @@
 H=M\sum_i \xi_i c_i^{\dagger} c_i
 \end{eqnarray}</p>
 <p>最近邻跃迁：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\begin{eqnarray}
+<div class="arithmatex">\[\begin{eqnarray}
 H_2=t_1\sum_{&lt;i,j&gt;}c_i^\dagger c_j
-\end{eqnarray}</div>
-<script type="math/tex; mode=display">\begin{eqnarray}
-H_2=t_1\sum_{<i,j>}c_i^\dagger c_j
-\end{eqnarray}</script>
-</div>
+\end{eqnarray}\]</div>
 <p>次近邻跃迁：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\begin{eqnarray}
+<div class="arithmatex">\[\begin{eqnarray}
 H_3=t_2\sum_{&lt;&lt;i,j&gt;&gt;}e^{iv_{ij}\phi}c_i^\dagger c_j
-\end{eqnarray}</div>
-<script type="math/tex; mode=display">\begin{eqnarray}
-H_3=t_2\sum_{<<i,j>>}e^{iv_{ij}\phi}c_i^\dagger c_j
-\end{eqnarray}</script>
-</div>
-<p>(2.3)中的<span class="arithmatex"><span class="MathJax_Preview">\phi</span><script type="math/tex">\phi</script></span>代表着交错磁场带来的相位。<span class="arithmatex"><span class="MathJax_Preview">t_1</span><script type="math/tex">t_1</script></span>和<span class="arithmatex"><span class="MathJax_Preview">t_2</span><script type="math/tex">t_2</script></span>代表跃迁强度。</p>
+\end{eqnarray}\]</div>
+<p>(2.3)中的<span class="arithmatex">\(\phi\)</span>代表着交错磁场带来的相位。<span class="arithmatex">\(t_1\)</span>和<span class="arithmatex">\(t_2\)</span>代表跃迁强度。</p>
 <h4 id="413">4.1.3 傅里叶变换</h4>
 <p>由于在动量空间便于计算，我们使用傅里叶变换将实空间的哈密顿量转换为动量空间的哈密顿量。</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\begin{eqnarray}
+<div class="arithmatex">\[\begin{eqnarray}
 H_{2}=t1\sum_k(a_k^\dagger b_k e^{-ike_1}+a_k^\dagger b_k e^{-ike_2})+a_k^\dagger b_k e^{-ike_3}+t1\sum_{k}(b_k^\dagger a_k e^{ike_1}+b_k^\dagger a_k e^{ike_2}+b_k^\dagger a_k e^{ike_3})
-\end{eqnarray}</div>
-<script type="math/tex; mode=display">\begin{eqnarray}
-H_{2}=t1\sum_k(a_k^\dagger b_k e^{-ike_1}+a_k^\dagger b_k e^{-ike_2})+a_k^\dagger b_k e^{-ike_3}+t1\sum_{k}(b_k^\dagger a_k e^{ike_1}+b_k^\dagger a_k e^{ike_2}+b_k^\dagger a_k e^{ike_3})
-\end{eqnarray}</script>
-</div>
+\end{eqnarray}\]</div>
 <h4 id="414">4.1.4 矩阵形式哈密顿量</h4>
 <p>为了便于计算，我们引入旋量，将哈密顿量写成矩阵的形式：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\begin{eqnarray}
+<div class="arithmatex">\[\begin{eqnarray}
 H(k)=\epsilon(k)+d(k)\cdot\sigma
-\end{eqnarray}</div>
-<script type="math/tex; mode=display">\begin{eqnarray}
-H(k)=\epsilon(k)+d(k)\cdot\sigma
-\end{eqnarray}</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">\begin{eqnarray}
+\end{eqnarray}\]</div>
+<div class="arithmatex">\[\begin{eqnarray}
 H_{2}=\begin{pmatrix}
 0 &amp; t1(e^{i\{kx,ky\}.a_1}+e^{i\{kx,ky\}.a_2}+e^{i\{kx,ky\}.a_3}) \\
 t1(e^{-i\{kx,ky\}.a_1}+e^{-i\{kx,ky\}.a_2}+e^{-i\{kx,ky\}.a_3}) &amp; 0
 \end{pmatrix}
-\end{eqnarray}</div>
-<script type="math/tex; mode=display">\begin{eqnarray}
-H_{2}=\begin{pmatrix}
-0 & t1(e^{i\{kx,ky\}.a_1}+e^{i\{kx,ky\}.a_2}+e^{i\{kx,ky\}.a_3}) \\
-t1(e^{-i\{kx,ky\}.a_1}+e^{-i\{kx,ky\}.a_2}+e^{-i\{kx,ky\}.a_3}) & 0
-\end{pmatrix}
-\end{eqnarray}</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">\begin{eqnarray}
+\end{eqnarray}\]</div>
+<div class="arithmatex">\[\begin{eqnarray}
 H_{3}=\begin{pmatrix}
 t2(e^{-i\{kx,ky\}.b_1-i\phi}+e^{i\{kx,ky\}.b_1+i\phi}+e^{-i\{kx,ky\}.b_2-i\phi}+e^{i\{kx,ky\}.b_2+i\phi}+e^{-i\{kx,ky\}.b_3-i\phi}+e^{i\{kx,ky\}.b_3+i\phi}) &amp; 0\\
 0 &amp; t2(e^{i\phi-i\{kx,ky\}.b_1}+e^{i\{kx,ky\}.b_1-i\phi}+e^{i\phi-i\{kx,ky\}.b_2}+e^{i\{kx,ky\}.b_2-i\phi}+e^{i\phi-i\{kx,ky\}.b_3}+e^{i\{kx,ky\}.b_3-i\phi})
 \end{pmatrix}
-\end{eqnarray}</div>
-<script type="math/tex; mode=display">\begin{eqnarray}
-H_{3}=\begin{pmatrix}
-t2(e^{-i\{kx,ky\}.b_1-i\phi}+e^{i\{kx,ky\}.b_1+i\phi}+e^{-i\{kx,ky\}.b_2-i\phi}+e^{i\{kx,ky\}.b_2+i\phi}+e^{-i\{kx,ky\}.b_3-i\phi}+e^{i\{kx,ky\}.b_3+i\phi}) & 0\\
-0 & t2(e^{i\phi-i\{kx,ky\}.b_1}+e^{i\{kx,ky\}.b_1-i\phi}+e^{i\phi-i\{kx,ky\}.b_2}+e^{i\{kx,ky\}.b_2-i\phi}+e^{i\phi-i\{kx,ky\}.b_3}+e^{i\{kx,ky\}.b_3-i\phi})
-\end{pmatrix}
-\end{eqnarray}</script>
-</div>
+\end{eqnarray}\]</div>
 <h4 id="415-haldane">4.1.5 Haldane模型求解</h4>
 <p>在写出动量空间的矩阵形式哈密顿量之后，我们可以通过求解矩阵的本征值和本征向量，就可以得到Haldane模型的能带。</p>
 <p>在mathematica中使用本征值求解函数，

@@ -47,6 +47,8 @@
       
     
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -579,6 +581,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#parallels-dektop" class="md-nav__link">
+    <span class="md-ellipsis">
+      parallels dektop 安装
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typora" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typora 安装与激活
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -687,6 +707,27 @@
   
   <span class="md-ellipsis">
     【练习】双层晶格
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mmapractice2.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    【练习】ssh模型与tfunc
   </span>
   
 
@@ -816,6 +857,27 @@
   
   <span class="md-ellipsis">
     CMP Thesis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mathphysics.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数理方法补课
   </span>
   
 
@@ -1015,6 +1077,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#parallels-dektop" class="md-nav__link">
+    <span class="md-ellipsis">
+      parallels dektop 安装
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typora" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typora 安装与激活
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1042,37 +1122,31 @@
 <h3 id="_1">硬盘格式不同？</h3>
 <p>好像硬盘格式不同，在windows上压缩的zip文件通过移动硬盘转移到mac上就无法打开。返回来使用Windows再打开也打不开了。因此使用github，把文件夹压缩包发到github上，再用mac从github下载就可以解压。</p>
 <p>得到文件夹之后在visual studio code打开，当命令行的<code>mkdocs</code>,<code>git</code>,<code>python</code>配置好之后可以使用一下命令从mac上部署到github page。</p>
-<div class="highlight"><pre><span></span><code>mkdocs serve %只是在本地看一下mkdocs可以成功搭建网站。
+<pre><code>mkdocs serve %只是在本地看一下mkdocs可以成功搭建网站。
 mkdocs gh-deploy
-</code></pre></div>
+</code></pre>
 <h3 id="mkdocs_1">mkdocs的配置</h3>
 <p>众所周知，mkdocs可以用pip install，那么mac上有没有pip呢？答案是有的，mac的终端自带python3和pip3. 注意不是<code>python</code>和<code>pip</code>而是带后缀的。</p>
 <p><img alt="" src="assets/python3inmac.png" /></p>
 <p>所以就可以使用命令<code>pip3 install mkdocs</code>安装mkdocs。</p>
 <p>mkdocs安装完成之后使用<code>pip3 install mkdocs-material</code>安装material主题。</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>在使用<code>pip3 install</code>过程中，可能遭遇网络问题，因为默认下载源在国外，因此可以通过更换国内下载源进行快速下载。</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>阿里云的下载源没有mkdocs，清华源有。有时候换了国内下载源也失败可能是下载源没有这个包</p>
-</div>
-<div class="highlight"><pre><span></span><code>pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+<p>!!! Tip
+    在使用<code>pip3 install</code>过程中，可能遭遇网络问题，因为默认下载源在国外，因此可以通过更换国内下载源进行快速下载。</p>
+<p>!!! Warning
+    阿里云的下载源没有mkdocs，清华源有。有时候换了国内下载源也失败可能是下载源没有这个包</p>
+<pre><code>pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 三个源：
 清华大学：https://pypi.tuna.tsinghua.edu.cn/simple  
 阿里云：http://mirrors.aliyun.com/pypi/simple/  
 豆瓣：http://pypi.douban.com/simple/  
-</code></pre></div>
+</code></pre>
 <p>在此之后转移到我的<code>phydocs</code>文件夹之后可以修改并本地部署，但是使用<code>gh-deploy</code>的时候就需要安装git了。</p>
 <h3 id="git">git安装</h3>
 <p>在<a href="https://git-scm.com/downloads/mac">https://git-scm.com/downloads/mac</a>网站上给出了macos安装git的方法。我尝试了homebrew和macports之后选择了macports，因为homebrew装不了。</p>
 <h4 id="macports">macports 安装</h4>
 <p>macports安装就是下载一个dmg文件，联网正常安装的话会卡在“运行软件安装”什么的步骤。</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>首先在安装之前断开网络就可以成功安装。 以下的解决方法适用于首次安装失败。</p>
-</div>
+<p>!!! Tip
+    首先在安装之前断开网络就可以成功安装。 以下的解决方法适用于首次安装失败。</p>
 <p>解决方法：</p>
 <p>参考：<a href="https://blog.csdn.net/qq285744011/article/details/88924070">https://blog.csdn.net/qq285744011/article/details/88924070</a></p>
 <p>在“活动监视器”中强制退出</p>
@@ -1081,8 +1155,8 @@ mkdocs gh-deploy
 <p>至此将失败的安装完全关闭。断开mac的所有网络之后重新安装即可。</p>
 <p>输入命令<code>port</code>检查macports是否正确安装</p>
 <h4 id="git_1">git 本体安装</h4>
-<div class="highlight"><pre><span></span><code>sudo port install git
-</code></pre></div>
+<pre><code>sudo port install git
+</code></pre>
 <p>即可自动安装</p>
 <h3 id="git_2">git 配置</h3>
 <p>git貌似关闭了命令行帐号密码登陆，反正我是失败了。所以使用了token登陆。</p>
@@ -1098,11 +1172,11 @@ mkdocs gh-deploy
 <p>输入账号密码后勾选repository即可。</p>
 </li>
 <li>
-<p>在vsc打开<code>phydocs</code>的命令行中输入
-<div class="highlight"><pre><span></span><code>git remote set-url origin https://&lt;your-username&gt;:&lt;your-token&gt;@github.com/Hwei-esay/Physics.git
-</code></pre></div></p>
+<p>在vsc打开<code>phydocs</code>的命令行中输入</p>
 </li>
 </ul>
+<pre><code>git remote set-url origin https://&lt;your-username&gt;:&lt;your-token&gt;@github.com/Hwei-esay/Physics.git
+</code></pre>
 <p>将<code>&lt;your-username&gt;</code>和<code>&lt;your-token&gt;</code>分别替换为用户名和刚才生成的token即可完成git和自己账户的链接。</p>
 <p>至此即可使用<code>mkdocs gh-deploy</code>完成从mac上的github page部署</p>
 <h2 id="_2">微信可以聊天但是不能打开网页</h2>
@@ -1111,6 +1185,18 @@ mkdocs gh-deploy
 <p>在网络DNS设置中：网络-以太网-详细信息-DNS，添加DNS服务器<code>114.114.114.114</code>即可</p>
 <h2 id="mathematicamatlab">mathematica和matlab的安装</h2>
 <p>在macos上这些软件的学习版不好安装，而学校又买了使用权，因此可以使用学校邮箱注册账号使用正版。</p>
+<h2 id="parallels-dektop">parallels dektop 安装</h2>
+<p>参考：<a href="https://luoxx.top/archives/pd20-free-share">https://luoxx.top/archives/pd20-free-share</a></p>
+<p>成功安装20.0版本</p>
+<ul>
+<li>安装激活工具</li>
+<li>安装pd</li>
+<li>完全退出pd</li>
+<li>打开激活工具操作</li>
+<li>在访达-应用程序-右键pd-打开（只需要第一次打开时这样操作）</li>
+</ul>
+<h2 id="typora">Typora 安装与激活</h2>
+<p>参考：<a href="https://juejin.cn/post/7234006333484597307">https://juejin.cn/post/7234006333484597307</a></p>
 
 
 
